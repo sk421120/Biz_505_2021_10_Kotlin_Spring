@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<header>나라상사 고객관리 시스템 2021V1</header>
+<nav class="main_nav">
+    <ul>
+        <li>Home</li>
+        <li>주문관리</li>
+        <li>결제관리</li>
+        <li>Login</li>
+    </ul>
+</nav>
+<table class="list">
+    <tr>
+        <th>고객ID</th>
+        <th>이름</th>
+        <th>전화번호</th>
+        <th>주소</th>
+        <th>담당자명</th>
+        <th>담당자연락처</th>
+        <th>매출액합계(만원)</th>
+    </tr>
+<!--    <tr>-->
+<!--        <td th:text="${member.m_id}"></td>-->
+<!--        <td th:text="${member.m_name}"></td>-->
+<!--        <td th:text="${member.m_tel}"></td>-->
+<!--        <td th:text="${member.m_addr}"></td>-->
+<!--        <td th:text="${member.m_man}"></td>-->
+<!--        <td th:text="${member.m_manTel}"></td>-->
+<!--        <td th:text="${member.m_sum}"></td>-->
+<!--    </tr>-->
+    <tr>
+        <td th:text="${member[0].m_id}"></td>
+        <td th:text="${member[0].m_name}"></td>
+        <td th:text="${member[0].m_tel}"></td>
+        <td th:text="${member[0].m_addr}"></td>
+        <td th:text="${member[0].m_man}"></td>
+        <td th:text="${member[0].m_manTel}"></td>
+        <td th:text="${member[0].m_sum}"></td>
+    </tr>
+    <tr>
+        <td th:text="${member[1].m_id}"></td>
+        <td th:text="${member[1].m_name}"></td>
+        <td th:text="${member[1].m_tel}"></td>
+        <td th:text="${member[1].m_addr}"></td>
+        <td th:text="${member[1].m_man}"></td>
+        <td th:text="${member[1].m_manTel}"></td>
+        <td th:text="${member[1].m_sum}"></td>
+    </tr>
+</table>
+</body>
+</html>
