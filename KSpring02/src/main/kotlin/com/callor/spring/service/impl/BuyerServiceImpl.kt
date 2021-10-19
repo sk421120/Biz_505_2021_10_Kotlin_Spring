@@ -2,8 +2,10 @@ package com.callor.spring.service.impl
 
 import com.callor.spring.model.Buyer
 import com.callor.spring.service.BuyerService
+import org.springframework.stereotype.Service
 import kotlin.random.Random
 
+@Service
 class BuyerServiceImpl: BuyerService {
     /*
     Kotlin 클래스 내에서 선언되며
