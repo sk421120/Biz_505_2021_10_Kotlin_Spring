@@ -1,10 +1,9 @@
 package com.callor.spring.controller
 
-import com.callor.spring.ConfigData
+import com.callor.spring.ConfigString
 import com.callor.spring.model.Buyer
 import com.callor.spring.service.BuyerService
 import com.callor.spring.service.ProductService
-import com.callor.spring.service.impl.BuyerServiceImpl
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
@@ -48,12 +47,11 @@ class HomeController {
 //        println(ConfigString.APP_NAME)
 //        println(ConfigString.APP_VERSION)
 
-//        var buyerList = bService.selectAll()
+        var buyerList = bService.selectAll()
 //        var memberList = mService.findById("0")
 //        model.addAttribute("member", buyerList)
-//        model["members"] = buyerList
-//        return "home"
-        return "redirect:/buyer/list"
+        model["members"] = buyerList
+        return "home"
     }
 
     /*
@@ -69,23 +67,13 @@ class HomeController {
     @RequestMapping(value = ["/detail"], method = [RequestMethod.GET])
     fun detail(model: Model, m_id:String): String {
         model["member"] = bService.findById(m_id)
-//        model["products"] = pService.findByBuyer(m_id)
-//        model["product_sum"] = pService.totalPriceByBuyer(m_id)
+        model["products"] = pService.findByBuyer(m_id)
+        model["product_sum"] = pService.totalPriceByBuyer(m_id)
         return "detail"
     }
 
     @RequestMapping(value = ["/find"], method = [RequestMethod.GET])
     fun find(model: Model): String {
         return "home"
-    }
-
-    @ResponseBody
-    @RequestMapping(value = ["/insert"], method = [RequestMethod.GET])
-    fun insert(): Buyer {
-
-        val insertBuyer = ConfigData.BUYER_LIST[0]
-        bService.insert(insertBuyer)
-
-        return insertBuyer
     }
 }

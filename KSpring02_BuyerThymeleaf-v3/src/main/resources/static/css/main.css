@@ -1,0 +1,66 @@
+
+* {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      header,
+      nav.main_nav,
+      table.list {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      header {
+        background-color: goldenrod;
+        color: white;
+        text-shadow: 2px 1px 2px gold;
+        font-size: 30px;
+        padding: 2rem 0;
+        text-align: center;
+        font-weight: 600;
+      }
+
+      nav.main_nav {
+        padding: 0 5px;
+        background-color: gold;
+        border-radius: 10px;
+      }
+
+      nav.main_nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav.main_nav ul li {
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      nav.main_nav ul li.login {
+        margin-left: auto;
+      }
+      nav.main_nav ul li:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+
+      table.list {
+        border-collapse: collapse;
+        margin-top: 10px;
+        background-color: seashell;
+        border-top: 2px solid tan;
+        border-bottom: 2px solid tan;
+      }
+      table.list th,
+      table.list td {
+        padding: 10px;
+      }
+
+      table.list th {
+      background-color:gold;
+      }
+
+      table.list td {
+        border-top: 1px solid tan;
+      }

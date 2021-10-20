@@ -11,7 +11,7 @@ $(function(){
 //    })
     function tableClickHandler() {
         const id = $(this).data("id")
-        location.href="/buyer/detail?m_id="+id
+        location.href="/detail?m_id="+id
     }
     $("table.list tr").on("click", tableClickHandler)
 })

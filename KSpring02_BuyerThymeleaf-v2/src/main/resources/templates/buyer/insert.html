@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="@{/layout}">
+<style>form.write_form {
+    width: 80%;
+    margin: 1rem auto;
+}
+
+form.write_form div {
+    width: 80%;
+    margin: 0 auto;
+}
+
+form.write_form label, form.write_form input {
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+}
+
+form.write_form label {
+    width: 20%;
+    text-align: right;
+}
+
+form.write_form input {
+    width: 70%;
+    border: none;
+    border-bottom: 1px solid lightsteelblue;
+}
+
+form.write_form button {
+    display: block;
+    margin-left: auto;
+}
+</style>
+
+<form method="post" layout:fragment="content" class="write_form">
+
+    <div><label>고객 ID</label><input name="userid"></div>
+    <div><label>이름</label><input name="name"></div>
+    <div><label>전화번호</label><input name="tel"></div>
+    <div><label>주소</label><input name="address"></div>
+    <div><label>담당자명</label><input name="manager"></div>
+    <div><label>담당자연락처</label><input name="man_tel"></div>
+    <div>
+        <button class="btn_write">작성하기</button>
+    </div>
+</form>

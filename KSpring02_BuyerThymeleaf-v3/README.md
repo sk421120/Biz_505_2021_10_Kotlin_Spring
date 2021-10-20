@@ -9,18 +9,6 @@
 * JPA 는 말 그대로 기술적인 개념이다. Spring 에서는 JPA 를 구현하기 위하여 interface 차원에서만 지원한다.
 * 보통은 JPA 와 함께 Hibernate 라는 구현체를 함께 사용한다. boot 에서는 Hibernate 는 JPA 에 포함되어 구현된다
 
-## JPA DDL 설정
-    spring.jpa.hibernate.ddl-auto=create
-* JPA DDL 설정: create, updtate, create-drop, validate, none 등이 있다
-  > create: 기존의 table을 삭제하고 다시 생성하기  
-  update: 기존 table 구조를 분석하여 변경사항을 alter table  
-  create-drop: 기존 table을 삭제하고 다시 생성하고 프로젝트를 종료하면 table drop  
-  validate: Entity column에 설정값과 실제 table의 구조가 다르면 프로젝트 실행 멈춤  
-  none: 아무것도 하지마..
-* 개발 당시: crate, update 설정
-* 자동화된 test를 진행할 때: create-drop
-* 수동 test: update, validate
-
 ### jQuery import
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-latest.min.js></script>

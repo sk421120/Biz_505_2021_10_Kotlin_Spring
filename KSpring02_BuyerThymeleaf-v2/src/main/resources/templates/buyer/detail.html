@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="@{/layout}">
+
+<section layout:fragment="content">
+  <table class="list">
+    <tr>
+      <th>고객ID</th>
+      <td th:text="${member.m_id}"></td>
+      <th>전화번호</th>
+      <td th:text="${member.m_tel}"></td>
+    <td rowspan="2" style="text-align:center"><button>고객정보 수정</button></td>
+    </tr>
+    <tr>
+      <th>이름</th>
+      <td th:text="${member.m_name}"></td>
+      <th>주소</th>
+      <td th:text="${member.m_addr}"></td>
+    </tr>
+    <tr>
+      <th>No.</th>
+      <th>상품명</th>
+      <th>단가</th>
+      <th>수량</th>
+      <th>금액</th>
+    </tr>
+    <tr th:each="product : ${products}" th:data-id="${product.p_id}">
+      <td th:text="${productStat.count}">1</td>
+      <td th:text="${product.p_name}">커피라떼는</td>
+      <td th:text="${product.p_price}">2000</td>
+      <td th:text="${product.p_qty}">20</td>
+      <td th:text="${product.p_total}">40000</td>
+    </tr>
+    <tr>
+      <th colspan="2">합계</th>
+      <td th:text="${product_sum[0]}"></td>
+      <td th:text="${product_sum[1]}"></td>
+      <td th:text="${product_sum[2]}"></td>
+    </tr>
+    <tr>
+      <td colspan="5" style="text-align:center"><button>주문 추가</button></td>
+    </tr>
+    <!--    <tr>-->
+    <!--        <td th:text="${member[0].m_id}"></td>-->
+    <!--        <td th:text="${member[0].m_name}"></td>-->
+    <!--        <td th:text="${member[0].m_tel}"></td>-->
+    <!--        <td th:text="${member[0].m_addr}"></td>-->
+    <!--        <td th:text="${member[0].m_man}"></td>-->
+    <!--        <td th:text="${member[0].m_manTel}"></td>-->
+    <!--        <td th:text="${member[0].m_sum}"></td>-->
+    <!--    </tr>-->
+    <!--    <tr>-->
+    <!--        <td th:text="${member[1].m_id}"></td>-->
+    <!--        <td th:text="${member[1].m_name}"></td>-->
+    <!--        <td th:text="${member[1].m_tel}"></td>-->
+    <!--        <td th:text="${member[1].m_addr}"></td>-->
+    <!--        <td th:text="${member[1].m_man}"></td>-->
+    <!--        <td th:text="${member[1].m_manTel}"></td>-->
+    <!--        <td th:text="${member[1].m_sum}"></td>-->
+    <!--    </tr>-->
+  </table>
+
+</section>
+
+
+</html>
