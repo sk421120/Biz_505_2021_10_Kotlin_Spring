@@ -3,6 +3,7 @@ package com.callor.spring.controller
 import com.callor.spring.models.Buyer
 import com.callor.spring.models.Sales
 import com.callor.spring.service.OrderService
+import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.ui.set
@@ -18,11 +19,26 @@ class OrderController(val orService: OrderService) {
 
     // localhost:8080/order/
     // localhost:8080/order
+//    @RequestMapping(value = ["/", ""], method = [RequestMethod.GET])
+//    fun list(model: Model): String {
+//        val salesList = orService.selectAll()
+//        model["SALES"] = salesList
+//        return "/order/list"
+//    }
+
     @RequestMapping(value = ["/", ""], method = [RequestMethod.GET])
-    fun list(model: Model): String {
-        val salesList = orService.selectAll()
+    fun list(model: Model, pageable: Pageable): String {
+
+        val salesList = orService.selectAll(pageable)
         model["SALES"] = salesList
-        return "/order/list"
+        return "order/list"
+    }
+
+    @RequestMapping(value = ["/sub_page"], method = [RequestMethod.GET])
+    fun subPage(model: Model, pageable: Pageable):String {
+        val salesList = orService.selectAll(pageable)
+        model["SALES"] = salesList
+        return "order/sub_page"
     }
 
     @RequestMapping(value = ["/detail"], method = [RequestMethod.GET])

@@ -5,6 +5,8 @@ import com.callor.spring.config.logger
 import com.callor.spring.models.Buyer
 import com.callor.spring.service.BuyerService
 import org.slf4j.LoggerFactory
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.ui.set
@@ -12,29 +14,67 @@ import org.springframework.web.bind.annotation.*
 import org.springframework.web.servlet.mvc.support.RedirectAttributes
 import java.lang.Exception
 
+
+/**
+ * 2021-10-26
+ * pagination 을 적용하기위하여 controller method 를 변경한다.
+ * 전체리스트를 보여주는 list() 함수를 변경한다.
+ * 가. list() 함수에 pagination 을 적용하기 위한 매개변수를 설정한다.
+ */
 @Controller
 @RequestMapping(value = ["/buyer"])
 class BuyerController(val bService: BuyerService) {
 
 //    private val logger = LoggerFactory.getLogger(BuyerController::class.java)
 
-//     @GetMapping(name="/list")
+    /*
+    list() 함수에 Pageable 클래스 객체를 매개변수로 선언
+     Pageable pagealbe
+     JPA 의 기능을 사용하여 pagination 을 구현하기 위한 하나의 도구
+
+     이런식으로 사용한다
+     http://localhost:8080/buyer/list
+          ?page=10
+          &size=10
+          &sort=userid,desc
+          &sort=name,asc
+
+     만약 주문정보를 조회한다면
+     다음처럼 최근입력한 자료가 먼저 나타나도록 할 때
+     http://localhost:8080/buyer/list
+          ?page=10
+          &size=10
+          &sort=data,desc
+          &sort=time,desc
+     */
+    //     @GetMapping(name="/list")
+//    @ResponseBody
     @RequestMapping(value = ["/list"], method = [RequestMethod.GET])
-    fun list(model: Model): String {
+    fun list(model: Model, pageable: Pageable): String {
 
         logger().debug("여기는 list 함수")
+//        logger().debug("Pageable {}", pageable.toString())
 
-        val buyerList = bService.selectAll()
+        // Page<Buyer>
+        val buyerList = bService.selectAll(pageable)
         model["BUYERS"] = buyerList
         return "buyer/list"
+//        return buyerList
+    }
+
+    @RequestMapping(value = ["/sub_page"], method = [RequestMethod.GET])
+    fun subPage(model: Model, pageable: Pageable):String {
+        val buyerList = bService.selectAll(pageable)
+        model["BUYERS"] = buyerList
+        return "buyer/sub_page"
     }
 
     @RequestMapping(value = ["/list/{page}"], method = [RequestMethod.GET])
-    fun page(model: Model, @PathVariable("page") page:String="0"): String {
+    fun page(model: Model, @PathVariable("page") page: String = "0"): String {
 
-        val intPage = try{
+        val intPage = try {
             page.toInt()
-        } catch (e:Exception) {
+        } catch (e: Exception) {
             logger().debug("매개변수 오류")
             0
         }
@@ -79,7 +119,9 @@ class BuyerController(val bService: BuyerService) {
     @RequestMapping(value = ["/insert"], method = [RequestMethod.GET])
     fun insert(model: Model): String {
         // val insertBuyer = ConfigData.BUYER_LIST[0]
+        val buyer:Buyer = bService.insert()
         model["BUYER"] = Buyer()
+
         return "buyer/write"
     }
 
@@ -137,8 +179,8 @@ class BuyerController(val bService: BuyerService) {
 
     }
 
-    @RequestMapping(value=["/delete/{userid}"],method=[RequestMethod.GET])
-    fun delete(@PathVariable("userid") userid:String):String {
+    @RequestMapping(value = ["/delete/{userid}"], method = [RequestMethod.GET])
+    fun delete(@PathVariable("userid") userid: String): String {
         bService.delete(userid)
         return "redirect:/buyer/list"
     }

@@ -28,8 +28,8 @@ $(()=>{
 
     function tableClickHandlerBuyer() {
         const id = $(this).data("id")
-        location.href = "/buyer/detail?userid=" + id
+        location.href = `${rootPath}/buyer/detail?userid=${id}`
     }
 
-    $("table.buyer_list tr").on("click", tableClickHandlerBuyer)
+    $("table.buyer_list tbody tr").on("click", tableClickHandlerBuyer)
 })

@@ -12,6 +12,14 @@
             margin-top:5px;
             margin-bottom : 5px;
         }
+
+        div.nextPage {
+            background-color: green;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+        }
     </style>
     <table class="buyer_list list">
         <thead>
@@ -37,13 +45,38 @@
         </tr>
         </tbody>
     </table>
+
+    <th:block th:replace="~{/fragment/page_nav::pageNav(${BUYERS})}" />
+    <div class="nextPage">MORE..</div>
     <div class="btn_box"><button class="btn_insert">고객등록</button></div>
     <script>
     $(function(){
+        let currentPage = 0;
+        let lastPage = false
+
         $("button.btn_insert").on("click",function(){
-            location.href ="/buyer/insert"
+            location.href =`${rootPath}buyer/insert`
         })
-      })
+
+        $("div.nextPage").on("click", function (){
+            // alert("더보기")
+            if (lastPage){
+                alert("마지막 페이지입니다")
+                return false
+            }
+
+            //jQuery.ajax
+            $.ajax({
+                url:`${rootPath}buyer/sub_page`,
+                data:{page: ++currentPage},
+                method:"GET"
+            }).done(function (result) {
+                lastPage = result.last
+                $("table.buyer_list tbody").append(result)
+            })
+        })
+    })
+
     </script>
 
 </section>

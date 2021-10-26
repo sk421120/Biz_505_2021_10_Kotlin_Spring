@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query
 // 현재 BuyerRepository interface 를 bean 으로 등록하라
 // @Repository 는 선택적인 option
 //@Repository
-interface BuyerRepository:JpaRepository<Buyer,String> {
+interface BuyerRepository : JpaRepository<Buyer, String> {
 
     /**
      *
@@ -18,14 +18,25 @@ interface BuyerRepository:JpaRepository<Buyer,String> {
      * findBy 로 시작해야 한다
      * data(Entity) 클래스에 정의된 맴버 변수 이름만 설정이 가능핟
      *
-      */
-    fun findByName(name:String):Array<Buyer>
-    fun findByTel(tel:String) : Array<Buyer>
+     */
+    fun findByName(name: String): Array<Buyer>
+    fun findByTel(tel: String): Array<Buyer>
 
     @Query("SELECT A FROM Buyer A")
-    fun findWithPagination(pageable: Pageable?) :List<Buyer>
+    fun findWithPagination(pageable: Pageable?): List<Buyer>
 
 //    fun findByUserName(userName:String) : Array<Buyer>
+
+    /*
+    JSQL(JPA SQL) : jpa에서 사용하는 sql 이다
+    JPA가 적용된 프로젝트에서 기본 규칙으로 제공하는 함수 외에
+    custom 함수를 만들고자 할 때 적용하는 SQL
+
+    FROM 절에 table 이름이 아닌 DTO 클래스를 적용한다.
+    */
+    @Query("SELECT max(userid) FROM Buyer")
+    fun maxUserId(): String?
+    // 고객 데이터가 하나도 없었을 떄를 대비해서 null safe 설정
 
 
 }

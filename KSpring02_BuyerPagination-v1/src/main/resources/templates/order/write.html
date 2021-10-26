@@ -1,0 +1,37 @@
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}"
+>
+
+<section layout:fragment="content" class="order_write write">
+    <form method="POST" th:object="${ORDER}">
+        <fieldset>
+            <legend>고객정보 등록</legend>
+            <div>
+                <label>USER ID</label>
+                <input th:field="*{userid}"/>
+            </div>
+            <div>
+                <label>거래일시</label>
+                <input th:field="*{date}" type="date"/>
+            </div>
+            <div>
+                <label>상품명</label>
+                <input th:field="*{pname}"/>
+            </div>
+            <div>
+                <label>단가</label>
+                <input th:field="*{amt}" type="number"/>
+             </div>
+            <div>
+                <label>수량</label>
+                <input th:field="*{qty}" type="number"/>
+            </div>
+            <div class="btn_box">
+                <button type="button" class="btn_save">저장</button>
+                <button type="button" class="btn_list">리스트로 가기</button>
+            </div>
+        </fieldset>
+    </form>
+</section>
