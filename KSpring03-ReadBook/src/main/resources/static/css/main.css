@@ -1,0 +1,116 @@
+@font-face {
+    font-family: "MaruBuri-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff")
+    format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "MaruBuri-Regular";
+    transition: ease 0.2s;
+}
+
+input,
+textarea,
+button {
+    outline: 0;
+    border: 0;
+}
+header {
+    background-color: rgb(240, 217, 187);
+    color: brown;
+    text-align: center;
+    height: 15vh;
+    border-bottom: 5px rgba(165, 42, 42, 0.75) dashed;
+    /* border-style: inset; */
+    border-radius: 0 0 10px 10px;
+}
+
+header h1,
+header p {
+    line-height: 7vh;
+}
+header p {
+    font-size: 17px;
+}
+.book_main,
+.book_input div {
+    display: flex;
+}
+
+.book_main {
+    height: 85vh;
+    width: 90vw;
+    margin: 0 auto;
+    border-left: 7px solid #b8554e;
+    border-right: 7px solid #b8554e;
+    /* border-radius: 10px; */
+}
+.book_input {
+    width: 85vw;
+    margin: 10px auto;
+    flex-direction: column;
+}
+
+.book_input div,
+.book_input input,
+.book_input textarea {
+    flex: 1;
+}
+
+.book_input div.input_wrap {
+    flex-direction: column;
+}
+
+.book_input input,
+.book_input textarea {
+    padding: 8px;
+    margin: 10px;
+    border-radius: 8px;
+    background-color: floralwhite;
+}
+
+.book_input textarea {
+    resize: none;
+}
+
+.book_input input:hover,
+.book_input textarea:hover {
+    background-color: blanchedalmond;
+}
+
+.book_input input:focus,
+.book_input textarea:focus {
+    background-color: wheat;
+}
+
+.btn_box {
+    flex-direction: row-reverse;
+    flex: 0.5;
+}
+
+.btn_box button {
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+.btn_box button:hover {
+    box-shadow: 2px 2px 2px gray;
+}
+
+button.list {
+    background-color: brown;
+}
+button.reset {
+    background-color: gray;
+}
+
+button.save {
+    background-color: rebeccapurple;
+}

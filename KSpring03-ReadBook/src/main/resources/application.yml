@@ -1,0 +1,19 @@
+#Context Path
+#server.servlet.context-path: /erp
+
+
+# Optional<List<String>> config = new Optional<List<String>>();
+#   config.add("classpath:app-dbms.yml")
+#   config.add("classpath:app-jpa.yml")
+spring:
+  config.import: >
+    optional:classpath:app-dbms.yml,
+    classpath:app-jpa.yml
+  mvc:
+    static-path-pattern: /static/**
+  web:
+    resources:
+      static-locations: classpath:static/
+      add-mappings: true
+  # logger Setting
+  output.ansi.enabled: ALWAYS
