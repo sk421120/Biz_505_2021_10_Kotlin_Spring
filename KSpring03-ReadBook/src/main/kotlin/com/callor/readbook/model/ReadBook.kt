@@ -10,12 +10,7 @@ import javax.persistence.Table
 data class ReadBook(
 
     @Id
-    @Column(
-        columnDefinition = "BIG INT",
-        nullable = false,
-        unique = true,
-        name = "seq"
-    )
+    @Column(columnDefinition = "BIGINT")
     var seq: Long? = null,
 
     @Column(nullable = false)

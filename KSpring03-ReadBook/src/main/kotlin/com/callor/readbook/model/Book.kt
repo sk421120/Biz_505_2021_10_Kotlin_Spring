@@ -13,18 +13,17 @@ data class Book(
     @Column(
         columnDefinition = "CHAR(13)",
         nullable = false,
-        unique = true,
-        name = "isbn"
+        unique = true
     )
     var isbn: String? = null,
 
     @Column(nullable = false)
     var title: String? = null,
 
-    @Column(nullable = false)
+//    @Column(nullable = false)
     var comp: String? = null,
 
-    @Column(nullable = false)
+//    @Column(nullable = false)
     var author: String? = null,
 
     @Column(nullable = false)

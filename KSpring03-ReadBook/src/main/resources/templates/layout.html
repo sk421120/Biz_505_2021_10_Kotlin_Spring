@@ -13,12 +13,15 @@
   <link rel="stylesheet"
         type="text/css"
         th:href="@{/static/css/main.css}">
+  <link rel="stylesheet"
+        type="text/css"
+        th:href="@{/static/css/nav.css}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <title>나라상사 고객관리</title>
+  <title>독서록페스티벌</title>
 </head>
 <body>
-<th:block th:replace="fragment/headerAndFooter :: headerFragment"></th:block>
-<th:block th:replace="fragment/headerAndFooter :: navFragment"></th:block>
+<th:block th:replace="fragment/header :: headerFragment"></th:block>
+<th:block th:replace="fragment/header :: navFragment"></th:block>
 
 <th:block layout:fragment="content"></th:block>
 </body>

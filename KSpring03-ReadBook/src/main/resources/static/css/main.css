@@ -19,25 +19,30 @@ button {
     outline: 0;
     border: 0;
 }
+
+ul {
+    list-style: none;
+}
+
 header {
     background-color: rgb(240, 217, 187);
     color: brown;
     text-align: center;
-    height: 15vh;
-    border-bottom: 5px rgba(165, 42, 42, 0.75) dashed;
+    height: 10vh;
+    /*border-bottom: 5px rgba(165, 42, 42, 0.75) dashed;*/
     /* border-style: inset; */
-    border-radius: 0 0 10px 10px;
+    /*border-radius: 0 0 10px 10px;*/
 }
 
 header h1,
 header p {
-    line-height: 7vh;
+    line-height: 6vh;
 }
 header p {
     font-size: 17px;
 }
 .book_main,
-.book_input div {
+.read_input div {
     display: flex;
 }
 
@@ -49,41 +54,41 @@ header p {
     border-right: 7px solid #b8554e;
     /* border-radius: 10px; */
 }
-.book_input {
+.read_input {
     width: 85vw;
     margin: 10px auto;
     flex-direction: column;
 }
 
-.book_input div,
-.book_input input,
-.book_input textarea {
+.read_input div,
+.read_input input,
+.read_input textarea {
     flex: 1;
 }
 
-.book_input div.input_wrap {
+.read_input div.input_wrap {
     flex-direction: column;
 }
 
-.book_input input,
-.book_input textarea {
+.read_input input,
+.read_input textarea {
     padding: 8px;
     margin: 10px;
     border-radius: 8px;
     background-color: floralwhite;
 }
 
-.book_input textarea {
+.read_input textarea {
     resize: none;
 }
 
-.book_input input:hover,
-.book_input textarea:hover {
+.read_input input:hover,
+.read_input textarea:hover {
     background-color: blanchedalmond;
 }
 
-.book_input input:focus,
-.book_input textarea:focus {
+.read_input input:focus,
+.read_input textarea:focus {
     background-color: wheat;
 }
 
@@ -104,13 +109,13 @@ header p {
     box-shadow: 2px 2px 2px gray;
 }
 
-button.list {
+button.btn_list {
     background-color: brown;
 }
-button.reset {
+button.btn_reset {
     background-color: gray;
 }
 
-button.save {
+button.btn_save {
     background-color: rebeccapurple;
 }

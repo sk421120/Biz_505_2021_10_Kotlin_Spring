@@ -4,26 +4,46 @@
       layout:decorator="~{/layout}"
 >
 <section class="book_main" layout:fragment="content">
-    <article class="book_input">
+    <form class="read_input" method="POST">
         <div>
-            <input type="text" placeholder="seq" name="seq" />
-            <input type="text" placeholder="name" name="name" />
+            <input type="text" placeholder="isbn" name="isbn"/>
+            <input type="text" placeholder="name" name="title"/>
         </div>
         <div>
-            <input type="text" placeholder="date" name="date" />
-            <input type="text" placeholder="stime" name="stime" />
-            <input type="text" placeholder="etime" name="etime" />
+            <input type="date" placeholder="rdate" name="rdate"/>
+            <input type="time" placeholder="stime" name="stime"/>
+            <input type="time" placeholder="etime" name="etime"/>
         </div>
         <div class="input_wrap">
-            <input class="title" type="text" placeholder="title" name="title" />
-            <textarea type="text" placeholder="내용을 입력해주세요"></textarea>
+            <input class="title" type="number" th:max="10" th:min="0"
+                   placeholder="rating" name="rating"/>
+            <textarea type="text" placeholder="내용을 입력해주세요" class="comment"></textarea>
         </div>
         <div class="btn_box">
-            <button class="list">LIST</button>
-            <button class="reset" type="reset">RESET</button>
-            <button class="save">SAVE</button>
+            <button class="btn_list" type="button">LIST</button>
+            <button class="btn_reset" type="reset">RESET</button>
+            <button class="btn_save" type="button">SAVE</button>
         </div>
-    </article>
+    </form>
+    <script>
+        $(function () {
+            $("button.btn_save").on("click", function () {
+                // if ($("input[name='isbn']").value == null) {
+                //     // alert("isbn 은 필수입니다")
+                //     alert($("input[name='isbn']").value)
+                //     $("input[name='isbn']").focus()
+                //     return
+                // }
+                // if ($("input[name='rdate']").value == null) {
+                //     alert("독서 시작 날짜 는 필수입니다")
+                //     $("input[name='rdate']").focus()
+                //     return
+                // }
+                // alert( $("input[name='isbn']").value )
+                $("form.read_input").submit()
+            })
+        })
+    </script>
 </section>
-</body>
+
 </html>

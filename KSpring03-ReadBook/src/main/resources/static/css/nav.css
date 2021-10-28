@@ -1,0 +1,18 @@
+.main_nav ul {
+    display: flex;
+    background-color: rgb(240, 217, 187);
+    color: brown;
+    border-bottom: 5px rgba(165, 42, 42, 0.75) dashed;
+    border-radius: 0 0 10px 10px;
+}
+
+.main_nav ul li {
+    padding:10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.main_nav ul li:hover {
+    background-color: #b8554e;
+    color:white;
+}
