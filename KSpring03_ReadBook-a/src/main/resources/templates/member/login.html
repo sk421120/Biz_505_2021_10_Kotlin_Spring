@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout}"
+>
+
+<section layout:fragment="content">
+    <form method="POST" class="login_form">
+<!--          th:action="@{/login}">-->
+        <fieldset>
+            <div class="input" th:name = "*{_csrf.parameterName}"
+                 th:value="*{_csrf.token}"
+            >
+                <input placeholder="USERNAME"/>
+            </div>
+            <div class="input">
+                <input placeholder="PASSWORD" type="password"/>
+            </div>
+            <div class="input">
+                <div>
+                    <input type="checkbox"/>
+                    <label>Remember ID</label>
+                </div>
+            </div>
+            <div class="input btn_box left">
+                <button class="btn login">LOGIN</button>
+            </div>
+        </fieldset>
+    </form>
+</section>
+</html>

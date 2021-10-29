@@ -1,0 +1,88 @@
+form {
+    width: 80%;
+    margin: 10px auto;
+    padding: 1rem;
+}
+
+fieldset {
+    border: 1px solid aquamarine;
+    border-radius: 10px;
+    padding: 10px 30px;
+    color: cadetblue;
+}
+
+legend {
+    margin: 10px;
+    padding: 0px 10px;
+}
+
+button {
+    display: inline-block;
+    margin: 5px;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+button:hover {
+    box-shadow: 2px 2px 2px cadetblue;
+}
+
+div.input {
+    width: 80%;
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+}
+
+div.input input, div.input label {
+    display: inline-block;
+    margin: 0px 5px;
+    padding: 8px;
+}
+
+div.input input {
+    flex: 1;
+    border: 1px solid cadetblue;
+    outline: 0;
+    border-radius: 5px;
+}
+
+div.input label {
+    text-align: right;
+    color: cadetblue;
+    font-weight: bold;
+}
+
+div.btn_box.right {
+    text-align: right;
+    justify-content: right;
+}
+
+div.btn_box.left {
+    text-align: left;
+    justify-content: left;
+}
+
+form.readbook_write button.save {
+    background-color: darkcyan;
+    color: white;
+}
+
+form.readbook_write button.reset {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+form.readbook_write button.list {
+    background-color: lightseagreen;
+    color: white;
+}
+
+form.login_form button.login {
+    background-color: darkseagreen;
+    color: white;
+}
