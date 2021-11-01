@@ -1,0 +1,39 @@
+<!-- 템플릿에 있는 layout을 가지고 와서 write파일을 감싸도록 하겠다?-->
+<html lang="ko"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout}">
+<!--layout을 가지고와서 하나의 view로 보이란 의미-->
+
+<section layout:fragment="content">
+    <form method="POST" class="login_form" th:action="@{/login}">
+        <!--          th:action="@{/login}">-->
+        <fieldset>
+            <!--            <div class="input" th:name = "*{_csrf.parameterName}"-->
+            <!--                 th:value="*{_csrf.token}"-->
+            <!--            >-->
+            <div class="input error" th:if="${param.error}">
+                로그인 실패: 사용자 ID 또는 비밀번호 오류
+            </div>
+            <div class="input error"
+                 th:if="${session.SPRING_SECURITY_LAST_EXCEPTION?.message}"
+                 th:text="${session.SPRING_SECURITY_LAST_EXCEPTION?.message}">
+            </div>
+            <div class="input">
+                <input placeholder="USERNAME" name="userid"/>
+            </div>
+            <div class="input">
+                <input placeholder="PASSWORD" type="password" name="password"/>
+            </div>
+            <div class="input">
+                <div>
+                    <input type="checkbox"/>
+                    <label>Remember ID</label>
+                </div>
+            </div>
+            <div class="input btn_box left">
+                <button class="btn login">LOGIN</button>
+            </div>
+        </fieldset>
+    </form>
+</section>
+</html>
