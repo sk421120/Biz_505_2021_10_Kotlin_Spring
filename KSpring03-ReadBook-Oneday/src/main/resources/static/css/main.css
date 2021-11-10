@@ -1,0 +1,121 @@
+@font-face {
+    font-family: "MaruBuri-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff")
+    format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "MaruBuri-Regular";
+    transition: ease 0.2s;
+}
+
+input,
+textarea,
+button {
+    outline: 0;
+    border: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    background-color: rgb(240, 217, 187);
+    color: brown;
+    text-align: center;
+    height: 10vh;
+    /*border-bottom: 5px rgba(165, 42, 42, 0.75) dashed;*/
+    /* border-style: inset; */
+    /*border-radius: 0 0 10px 10px;*/
+}
+
+header h1,
+header p {
+    line-height: 6.5vh;
+}
+header p {
+    font-size: 17px;
+}
+.book_main,
+.read_input div {
+    display: flex;
+}
+
+.book_main {
+    height: 85vh;
+    width: 90vw;
+    margin: 0 auto;
+    border-left: 7px solid #b8554e;
+    border-right: 7px solid #b8554e;
+    /* border-radius: 10px; */
+}
+.read_input {
+    width: 85vw;
+    margin: 10px auto;
+    flex-direction: column;
+}
+
+.read_input div,
+.read_input input,
+.read_input textarea {
+    flex: 1;
+}
+
+.read_input div.input_wrap {
+    flex-direction: column;
+}
+
+.read_input input,
+.read_input textarea {
+    padding: 8px;
+    margin: 10px;
+    border-radius: 8px;
+    background-color: floralwhite;
+}
+
+.read_input textarea {
+    resize: none;
+}
+
+.read_input input:hover,
+.read_input textarea:hover {
+    background-color: blanchedalmond;
+}
+
+.read_input input:focus,
+.read_input textarea:focus {
+    background-color: wheat;
+}
+
+.btn_box {
+    flex-direction: row-reverse;
+    flex: 0.5;
+}
+
+.btn_box button {
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+.btn_box button:hover {
+    box-shadow: 2px 2px 2px gray;
+}
+
+button.btn_list {
+    background-color: brown;
+}
+button.btn_reset {
+    background-color: gray;
+}
+
+button.btn_save {
+    background-color: rebeccapurple;
+}

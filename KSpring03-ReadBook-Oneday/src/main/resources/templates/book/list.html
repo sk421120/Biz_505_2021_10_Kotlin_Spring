@@ -1,0 +1,37 @@
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}"
+>
+<section class="book_main" layout:fragment="content">
+    <table class="book_list list">
+        <thead>
+        <tr>
+            <th>책제목</th>
+            <th>출판사</th>
+            <th>작가</th>
+            <th>가격</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="book_tr" th:each="BOOK : ${BLIST}" th:data-id="${BOOK.isbn}">
+            <td th:text="${BOOK.title}">ISBN</td>
+            <td th:text="${BOOK.comp}"></td>
+            <td th:text="${BOOK.author}"></td>
+            <td th:text="${BOOK.price}"></td>
+            <td><button class="btn_insert">독서록 작성</button></td>
+        </tr>
+        </tbody>
+    </table>
+    <script>
+        $(function(){
+            $("button.btn_insert").on("click",function(){
+                var isbn = $(this).closest("tr").data("id")
+                // alert(isbn)
+                location.href =`/readbook/insert?isbn=${isbn}`
+            })
+        })
+    </script>
+</section>
+
+</html>

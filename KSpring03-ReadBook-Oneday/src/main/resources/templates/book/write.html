@@ -1,0 +1,29 @@
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}"
+>
+<section class="book_main" layout:fragment="content">
+    <article class="book_input">
+        <div>
+            <input type="text" placeholder="seq" name="seq" />
+            <input type="text" placeholder="name" name="name" />
+        </div>
+        <div>
+            <input type="text" placeholder="date" name="date" />
+            <input type="text" placeholder="stime" name="stime" />
+            <input type="text" placeholder="etime" name="etime" />
+        </div>
+        <div class="input_wrap">
+            <input class="title" type="text" placeholder="title" name="title" />
+            <textarea type="text" placeholder="내용을 입력해주세요"></textarea>
+        </div>
+        <div class="btn_box">
+            <button class="list">LIST</button>
+            <button class="reset" type="reset">RESET</button>
+            <button class="save">SAVE</button>
+        </div>
+    </article>
+</section>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}"
+>
+<section class="book_main" layout:fragment="content">
+    <form class="read_input" method="POST">
+        <input th:name = "*{_csrf.parameterName}" th:value="*{_csrf.token}" hidden/>
+        <div>
+            <input type="text" placeholder="isbn" name="isbn" th:value="${BOOK.isbn}"/>
+            <input type="text" placeholder="name" name="title" th:value="${BOOK.title}"/>
+        </div>
+        <div>
+            <input type="date" placeholder="sdate" name="sdate"/>
+            <input type="time" placeholder="stime" name="stime"/>
+            <input type="date" placeholder="edate" name="edate"/>
+            <input type="time" placeholder="etime" name="etime"/>
+        </div>
+        <div class="input_wrap">
+            <input class="title" placeholder="subject" name="subject"/>
+            <textarea type="text" placeholder="내용을 입력해주세요" class="comment" name="content"></textarea>
+        </div>
+        <div class="btn_box">
+            <button class="btn_list" type="button">LIST</button>
+            <button class="btn_reset" type="reset">RESET</button>
+            <button class="btn_save" type="button">SAVE</button>
+        </div>
+    </form>
+    <script>
+        $(function () {
+            $("button.btn_save").on("click", function () {
+                const title = $("input[name='title']")
+                if (title.val() === ""){
+                    alert("NOOOO")
+                    title.focus()
+                    return false
+                }
+
+                $("form.read_input").submit()
+            })
+        })
+    </script>
+</section>
+
+</html>
