@@ -1,29 +1,20 @@
 <!DOCTYPE html>
-<html lang="ko"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="ko" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0"/>
-  <script th:inline="javascript">
-    // 분리된 JS 코드에서 project ContextRoot 를 사용하기 위하여
-    // 미리 rootPath 를 만들어두자
-    const rootPath = /*[[@{/}]]*/ null
-  </script>
-  <link rel="stylesheet"
-        type="text/css"
-        th:href="@{/static/css/main.css}">
-  <link rel="stylesheet"
-        type="text/css"
-        th:href="@{/static/css/nav.css}">
-  <link rel="stylesheet"
-        type="text/css"
-        th:href="@{/static/css/table.css}">
-  <link rel="stylesheet"
-        type="text/css"
-        th:href="@{/static/css/form.css}">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <title>독서록페스티벌</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0"/>
+    <script th:inline="javascript">
+        // 분리된 JS 코드에서 project ContextRoot 를 사용하기 위하여
+        // 미리 rootPath 를 만들어두자
+        const rootPath = /*[[@{/}]]*/ null
+    </script>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/nav.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/table.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/form.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>독서록페스티벌</title>
 </head>
 <body>
 <th:block th:replace="fragment/header :: headerFragment"></th:block>

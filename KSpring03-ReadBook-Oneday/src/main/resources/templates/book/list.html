@@ -1,8 +1,7 @@
 <html lang="ko"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="~{/layout}"
->
+      layout:decorator="~{/layout}">
 <section class="book_main" layout:fragment="content">
     <table class="book_list list">
         <thead>
@@ -22,10 +21,8 @@
         $(function () {
             $("table.book_list tbody tr").on("click", function () {
                 var isbn = $(this).closest("tr").data("id")
-
                 location.href = `/read/list/${isbn}`
             })
-
         })
     </script>
 </section>

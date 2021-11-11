@@ -9,7 +9,8 @@ import com.callor.readbook.service.ReadBookService
 import org.springframework.stereotype.Service
 
 @Service("readbookService")
-class ReadBookServiceImpl(val rbDao: ReadRepository, val bDao: BookRepository) : ReadBookService {
+class ReadBookServiceImpl(val rbDao: ReadRepository, val bDao: BookRepository)
+    : ReadBookService {
     override fun findByIsbn(isbn: String): Array<ReadBookDTO> {
         return rbDao.findByIsbn(isbn)
     }
@@ -24,15 +25,9 @@ class ReadBookServiceImpl(val rbDao: ReadRepository, val bDao: BookRepository) :
 
     override fun insert(readBook: ReadBookVO) {
         val readBookDTO = ReadBookDTO(
-            0,
-            readBook.isbn,
-            readBook.title,
-            readBook.sdate,
-            readBook.stime,
-            readBook.etime,
-            readBook.subject,
-            readBook.content
-        )
+            0, readBook.isbn, readBook.title, readBook.sdate,
+            readBook.edate, readBook.stime, readBook.etime,
+            readBook.subject, readBook.content )
         val bookDTO = BookDTO(readBook.isbn, readBook.title)
 
         rbDao.save(readBookDTO)
