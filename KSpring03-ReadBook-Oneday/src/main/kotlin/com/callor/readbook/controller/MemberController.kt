@@ -15,4 +15,5 @@ class MemberController {
 //        return "Login form 호출하기"
         return "member/login"
     }
+
 }

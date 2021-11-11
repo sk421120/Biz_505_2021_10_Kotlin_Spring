@@ -28,10 +28,7 @@ header {
     background-color: rgb(240, 217, 187);
     color: brown;
     text-align: center;
-    height: 10vh;
-    /*border-bottom: 5px rgba(165, 42, 42, 0.75) dashed;*/
-    /* border-style: inset; */
-    /*border-radius: 0 0 10px 10px;*/
+    height: 12vh;
 }
 
 header h1,
@@ -118,4 +115,8 @@ button.btn_reset {
 
 button.btn_save {
     background-color: rebeccapurple;
+}
+
+button.btn_insert {
+    background-color: darkcyan;
 }

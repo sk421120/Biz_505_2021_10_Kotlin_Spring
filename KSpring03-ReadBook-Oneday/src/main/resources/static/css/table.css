@@ -1,0 +1,25 @@
+table.list {
+    margin:10px auto;
+    width:80%;
+    border-collapse: collapse;
+}
+
+table.list th, table.list td {
+    padding: 10px;
+}
+
+table.list thead tr {
+    background-color: rgba(184, 85, 78, 0.4);
+}
+
+table.list tbody tr {
+    background-color: #F0D9BBFF
+}
+
+table .btn_wrap button {
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    margin: 10px;
+    border-radius: 5px;
+}

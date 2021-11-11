@@ -1,0 +1,22 @@
+.login_main form {
+    width: 80%;
+    margin:10px auto;
+    border-radius: 10px;
+}
+
+.login_main form fieldset {
+    width: 90%;
+    margin:0 auto;
+    text-align: center;
+}
+
+.login_main form fieldset input {
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.login_main form button {
+    background-color: #b8554e;
+}

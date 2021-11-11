@@ -29,10 +29,17 @@
     <script>
         $(function () {
             $("button.btn_save").on("click", function () {
+                const isbn = $("input[name='isbn']")
                 const title = $("input[name='title']")
                 if (title.val() === ""){
-                    alert("NOOOO")
+                    alert("책 제목은 필수입니다.")
                     title.focus()
+                    return false
+                }
+
+                if (isbn.val() === ""){
+                    alert("책 isbn은 필수입니다.")
+                    isbn.focus()
                     return false
                 }
 

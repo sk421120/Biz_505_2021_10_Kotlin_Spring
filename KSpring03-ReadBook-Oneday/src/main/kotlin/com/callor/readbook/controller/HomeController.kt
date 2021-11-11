@@ -11,6 +11,6 @@ class HomeController {
 //    @ResponseBody
     @RequestMapping(value = ["/",""], method = [RequestMethod.GET])
     fun home():String {
-        return "redirect:/read/list"
+        return "redirect:/read"
     }
 }

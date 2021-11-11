@@ -6,6 +6,7 @@ import com.callor.readbook.model.ReadBookVO
 interface ReadBookService {
 
     fun selectAll():Array<ReadBookDTO>
+    fun findByIsbn(isbn:String):Array<ReadBookDTO>
 
     fun findBySeq(seq:Long):ReadBookDTO
 

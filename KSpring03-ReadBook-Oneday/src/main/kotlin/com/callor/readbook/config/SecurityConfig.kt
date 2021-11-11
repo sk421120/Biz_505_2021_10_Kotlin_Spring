@@ -37,6 +37,7 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
             .antMatchers("/member/mypage").authenticated()
             .antMatchers("/member/**").permitAll()
             .antMatchers("/read/**").authenticated()
+            .antMatchers("/book/**").authenticated()
             .antMatchers("/**").permitAll()
 
             .and().formLogin()

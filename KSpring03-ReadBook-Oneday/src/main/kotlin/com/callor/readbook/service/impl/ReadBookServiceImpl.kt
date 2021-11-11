@@ -10,6 +10,10 @@ import org.springframework.stereotype.Service
 
 @Service("readbookService")
 class ReadBookServiceImpl(val rbDao: ReadRepository, val bDao: BookRepository) : ReadBookService {
+    override fun findByIsbn(isbn: String): Array<ReadBookDTO> {
+        return rbDao.findByIsbn(isbn)
+    }
+
     override fun selectAll(): Array<ReadBookDTO> {
         return rbDao.findAll().toTypedArray()
     }
